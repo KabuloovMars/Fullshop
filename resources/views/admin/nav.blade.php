@@ -129,6 +129,7 @@
           </div>
         </div>
       </li>
+
       <li class="dropdown"><a href="#" data-toggle="dropdown"
           class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="admin/image" src="admin/assets/img/user.png"
             class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
@@ -145,6 +146,8 @@
           <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
             Logout
           </a>
+          <x-app-layout>
+        </x-app-layout>
         </div>
       </li>
     </ul>
