@@ -46,8 +46,10 @@
 
 
 
+
                         @endif
                     </div>
+                    <a href="{{ route('cartViewProduct') }}" class="btn btn-success" >View</a>
                 </div>
             </div>
             @endforeach

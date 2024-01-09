@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Livewire\Exceptions\LivewirePageExpiredBecauseNewDeploymentHasSignificantEnoughChanges;
 
 class MainController extends Controller
 {
@@ -12,9 +14,14 @@ class MainController extends Controller
         if($usertype == 1){
             return view("admin.home");
         }else{
-            return view("home.index");
+
+        $products = Product::all();
+            return view("home.index" ,compact('products'));
         }
     }
+
+
+
 
 
 
@@ -26,6 +33,18 @@ class MainController extends Controller
         return view('home.index' , compact('products'));
     }
 
+
+    public function cartViewProduct(){
+
+        if(Auth::check()){
+            return view('home.cart-view-prodcut');
+
+        }else{
+            return redirect()->route('login');
+
+        }
+
+    }
 
 }
 
