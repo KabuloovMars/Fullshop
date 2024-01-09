@@ -85,20 +85,14 @@ public function addViewProduct(){
 
        }
 
-
-
-       $data = $request->all();
-
-
-
-
         // dd($data);
-
        Product::create($data);
+
 
        return redirect()->route('viewProduct');
 
     }
+
 
 
     public function viewProduct(){
@@ -114,7 +108,7 @@ public function addViewProduct(){
             $categories = Category::all();
             $product = Product::findOrFail($id);
             // dd($categoria = $product) ;
-            return view('admin.product-edit', compact('product','categories'));
+            return view('admin.product-edit', compact('categories', 'product'));
         }
 
 
@@ -136,6 +130,32 @@ public function productUpdate(Request $request){
         return redirect()->route('viewProduct')->with('message','Product deleted Successfully!');
 
     }
+
+    public function searchProduct(request $request){
+        $text = $request->search;
+
+
+
+        $products = Product::where('name','like','%'.$text.'%')
+                        ->orWhere('category', 'like' ,'%' . $text . '%')->get();
+
+        return view('admin.viewProduct',compact('products'));
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 }
 
 

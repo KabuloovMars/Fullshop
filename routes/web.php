@@ -53,3 +53,17 @@ Route::get('productEdit/{id}',[AdminController::class,'productEdit'])->name('pro
 Route::post('productUpdate' ,[AdminController::class,'productUpdate'])->name('productUpdate');
 
 Route::get('productDelete/{id}',[AdminController::class,'productDelete'])->name('productDelete');
+
+Route::get('search-Product',  [AdminController::class,'searchProduct'])->name('searchProduct');
+
+
+//client page
+
+
+
+Route::get('/', [MainController::class ,'indexHomeProduct']);
+
+
+
+
+

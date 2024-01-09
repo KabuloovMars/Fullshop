@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -14,5 +15,17 @@ class MainController extends Controller
             return view("home.index");
         }
     }
+
+
+
+
+    public function indexHomeProduct(){
+
+        $products = Product::all();
+
+        return view('home.index' , compact('products'));
+    }
+
+
 }
 
