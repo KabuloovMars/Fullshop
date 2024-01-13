@@ -96,7 +96,7 @@ public function addViewProduct(){
 
 
     public function viewProduct(){
-        $products  = Product::all();
+        $products  = Product::paginate(4);
 
         return view('admin.viewProduct',compact('products'));
     }

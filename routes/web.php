@@ -63,7 +63,9 @@ Route::get('search-Product',  [AdminController::class,'searchProduct'])->name('s
 
 Route::get('/', [MainController::class ,'indexHomeProduct']);
 
-Route::get('cart-View-Product', [MainController::class, 'cartViewProduct'])->name('cartViewProduct');
+Route::post('add-To-cart/{id}' ,[MainController::class , 'addToCart'])->name('addToCart');
+Route::get('product-desc/{id}',[MainController::class,'productDesc'])->name('productDesc');
+Route::get('IndexCart', [MainController::class, 'IndexCart'])->name('IndexCart');
 
 
 

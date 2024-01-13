@@ -84,7 +84,8 @@
 
 
 
-                                      </table>
+                                    </table>
+                                    {{ $products->links() }}
                                     </div>
                                   </div>
                                 </div>
