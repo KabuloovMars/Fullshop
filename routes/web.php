@@ -66,7 +66,10 @@ Route::get('/', [MainController::class ,'indexHomeProduct']);
 Route::post('add-To-cart/{id}' ,[MainController::class , 'addToCart'])->name('addToCart');
 Route::get('product-desc/{id}',[MainController::class,'productDesc'])->name('productDesc');
 Route::get('IndexCart', [MainController::class, 'IndexCart'])->name('IndexCart');
-
+Route::get('add-To-Order', [MainController::class, 'addToOrder'])->name('addToOrder');
+Route::get('view-All-Orders', [MainController::class, 'viewAllOrders'])->name('viewAllOrders');
+Route::get('searchOrders', [AdminController::class,'searchOrders'])->name('searchOrders');
+route::get('Accept',[AdminController::class,'accept'])->name('accept');
 
 
 

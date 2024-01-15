@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use Livewire\Exceptions\LivewirePageExpiredBecauseNewDeploymentHasSignificantEnoughChanges;
+use Psy\Command\WhereamiCommand;
 
 class MainController extends Controller
 {
@@ -81,14 +83,58 @@ class MainController extends Controller
     }
 
     public function IndexCart(){
+        $user = Auth::user();
+        $carts = Cart::all();
+        $carts = DB::table('carts')->where('email' , $user->email)->get();
+
+        return view('home.cart-view-prodcut', compact('carts'));
 
 
-            return view('home.cart-view-prodcut' );
 
 
-
-  
 
     }
+    public function addToOrder(){
+        $user = Auth::user();
+        $orders = Cart::all();
+        $orders = DB::table('carts')->where('email' , $user->email)->get();
+foreach($orders as $order){
+    Order::create([
+        'user_id'=>$order->user_id,
+        'product_id'=>$order->product_id,
+        'user_name'=>$order->user_name,
+        'user_email'=>$order->email,
+        'user_phone'=>$order->phone,
+        'product_name'=>$order->product_name,
+        'product_price'=>$order->total_price,
+        'product_quantity'=>$order->quantity,
+        'img' => $order->img,
+
+    ]);
+
+}
+        $carts = Cart::all();
+        $carts = DB::table('carts')->where('email' , $user->email)->delete();
+
+        return redirect()->back()->with('massage' , 'Your order is accepted!');
+
+    }
+
+
+    public function viewAllOrders(){
+        $orders  = Order::all();
+
+
+        return view('admin.Orders-view', compact('orders'));
+
+
+
+
+
+    }
+
+
+
+
 }
 

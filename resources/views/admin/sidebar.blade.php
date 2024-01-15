@@ -8,7 +8,7 @@
       <ul class="sidebar-menu">
         <li class="menu-header">Main</li>
         <li class="dropdown active">
-          <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+          <a href="#" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
         </li>
         <li class="dropdown">
           <a href="#" class="menu-toggle nav-link has-dropdown"><i
@@ -23,7 +23,7 @@
           <ul class="dropdown-menu">
             <li><a class="nav-link" href={{ route('addViewProduct') }}>Add product</a></li>
             <li><a class="nav-link" href="{{ route('viewProduct') }}">View product</a></li>
-            <li><a class="nav-link" href="blog.html">Blog</a></li>
+            <li><a class="nav-link" href={{ route('viewAllOrders') }}>Blog</a></li>
             <li><a class="nav-link" href="calendar.html">Calendar</a></li>
           </ul>
         </li>

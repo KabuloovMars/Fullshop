@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -150,7 +151,21 @@ public function productUpdate(Request $request){
 
 
 
+    public function searchOrders(request $request){
+        $text = $request->search;
 
+
+
+        $orders = Order::where('product_name','like','%'.$text.'%')->get();
+
+        return view('admin.orders-view',compact('orders'));
+
+
+
+
+
+
+    }
 
 
 
