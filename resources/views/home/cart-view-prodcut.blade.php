@@ -14,25 +14,33 @@
 
 	<div id="page">
 		@include('home.header')
-    @php
-        $i=0;
-        $total_price = 0
-    @endphp
+
 
         <section class="h-100 h-custom" style="background-color: #d2c9ff;">
             <div class="container py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12">
-                  <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-                    <div class="card-body p-0">
-                      <div class="row g-0">
-                        <div class="col-lg-8">
-                          <div class="p-5">
-                            <div class="d-flex justify-content-between align-items-center mb-5">
-                              <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                              <h6 class="mb-0 text-muted">3 items</h6>
-                            </div>
-                            <hr class="my-4">
+
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12">
+                        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                            <div class="card-body p-0">
+                                <div class="row g-0">
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                @php
+                                    $i=0;
+                                    $total_price = 0
+                                @endphp
+                                    @if (Session::has('massage'))
+                                    <div class="alert alert-success alert-dismissible">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>{{ session()->get('massage') }}</strong>
+                                        </div>
+                                        @endif
+                                        <hr class="my-4">
+                            {{-- <div class="d-flex justify-content-between align-items-center mb-5"> --}}
+                              {{-- <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1> --}}
+                              {{-- <h6 class="mb-0 text-muted">3 items</h6> --}}
+                            {{-- </div> --}}
                             @foreach ($carts as $cart)
                             <div class="row mb-4 d-flex justify-content-between align-items-center">
                               <div class="col-md-2 col-lg-2 col-xl-2">
@@ -122,6 +130,7 @@
               </div>
             </div>
           </section>
+
 
 
         @include('home.footer')

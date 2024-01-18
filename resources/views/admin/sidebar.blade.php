@@ -11,6 +11,10 @@
           <a href="#" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
         </li>
         <li class="dropdown">
+            <a href="{{ route('viewAllOrders') }}" class="menu-toggle nav-link "><i
+                data-feather="pie-chart"></i><span>All orders</span></a>
+          </li>
+        <li class="dropdown">
           <a href="#" class="menu-toggle nav-link has-dropdown"><i
               data-feather="briefcase"></i><span>Category</span></a>
           <ul class="dropdown-menu">
@@ -23,7 +27,7 @@
           <ul class="dropdown-menu">
             <li><a class="nav-link" href={{ route('addViewProduct') }}>Add product</a></li>
             <li><a class="nav-link" href="{{ route('viewProduct') }}">View product</a></li>
-            <li><a class="nav-link" href={{ route('viewAllOrders') }}>Blog</a></li>
+            <li><a class="nav-link" href="">Blog</a></li>
             <li><a class="nav-link" href="calendar.html">Calendar</a></li>
           </ul>
         </li>
@@ -95,18 +99,7 @@
             <li><a class="nav-link" href="editable-table.html">Editable Table</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="menu-toggle nav-link has-dropdown"><i
-              data-feather="pie-chart"></i><span>Charts</span></a>
-          <ul class="dropdown-menu">
-            <li><a class="nav-link" href="chart-amchart.html">amChart</a></li>
-            <li><a class="nav-link" href="chart-apexchart.html">apexchart</a></li>
-            <li><a class="nav-link" href="chart-echart.html">eChart</a></li>
-            <li><a class="nav-link" href="chart-chartjs.html">Chartjs</a></li>
-            <li><a class="nav-link" href="chart-sparkline.html">Sparkline</a></li>
-            <li><a class="nav-link" href="chart-morris.html">Morris</a></li>
-          </ul>
-        </li>
+
         <li class="dropdown">
           <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="feather"></i><span>Icons</span></a>
           <ul class="dropdown-menu">

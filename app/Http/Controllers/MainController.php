@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Livewire\Exceptions\LivewirePageExpiredBecauseNewDeploymentHasSignificantEnoughChanges;
+use Pest\Support\Arr;
+use PhpParser\Node\Expr\Cast\Array_;
 use Psy\Command\WhereamiCommand;
 
 class MainController extends Controller
@@ -74,6 +76,7 @@ class MainController extends Controller
                 'price'=>$price,
                 'total_price'=>$total_price,
                 'quantity'=>$request->quantity
+
             ]);
 
             return redirect()->route('IndexCart');
@@ -109,7 +112,7 @@ foreach($orders as $order){
         'product_price'=>$order->total_price,
         'product_quantity'=>$order->quantity,
         'img' => $order->img,
-
+        'order_status'=>"Processing"
     ]);
 
 }
@@ -126,15 +129,14 @@ foreach($orders as $order){
 
 
         return view('admin.Orders-view', compact('orders'));
-
-
-
-
-
     }
 
 
+    public function updateStatus($id){
 
+        Order::where('id' , $id)->update(array('order_status' => 'Accepted'));
+        return redirect()->back()->with('message','Order is accepted');
 
 }
 
+}

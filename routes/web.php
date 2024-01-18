@@ -70,6 +70,7 @@ Route::get('add-To-Order', [MainController::class, 'addToOrder'])->name('addToOr
 Route::get('view-All-Orders', [MainController::class, 'viewAllOrders'])->name('viewAllOrders');
 Route::get('searchOrders', [AdminController::class,'searchOrders'])->name('searchOrders');
 route::get('Accept',[AdminController::class,'accept'])->name('accept');
+Route::get('Update/{id}', [MainController::class, 'updateStatus'])->name('updateStatus');
 
 
 

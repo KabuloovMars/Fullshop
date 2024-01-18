@@ -1,4 +1,4 @@
-<script src="home/js/jquery.min.js"></script>
+<script src="{{ asset('home/js/jquery.min.js') }}"></script>
    <!-- popper -->
    <script src="home/js/popper.min.js"></script>
    <!-- bootstrap 4.1 -->

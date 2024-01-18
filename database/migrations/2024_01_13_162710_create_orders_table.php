@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('product_price');
             $table->string('product_quantity');
             $table->string('img');
+            $table->string('order_status');
             $table->timestamps();
         });
     }

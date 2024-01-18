@@ -171,6 +171,7 @@ public function productUpdate(Request $request){
 
 
 
+
 }
 
 

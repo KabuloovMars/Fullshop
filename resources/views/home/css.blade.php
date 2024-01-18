@@ -1,14 +1,14 @@
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="home/css/animate.css">
+	<link rel="stylesheet" href="{{asset('home/css/animate.css')}}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="home/css/icomoon.css">
+	<link rel="stylesheet" href="('home/css/icomoon.css')">
 	<!-- Ion Icon Fonts-->
-	<link rel="stylesheet" href="home/css/ionicons.min.css">
+	<link rel="stylesheet" href="('home/css/ionicons.min.css')">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="home/css/bootstrap.min.css">
+	<link rel="stylesheet" href="('home/css/bootstrap.min.css')">
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="home/css/magnific-popup.css">
+	<link rel="stylesheet" href="{{asset('home/css/magnific-popup.css')}}">
 
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="home/css/flexslider.css">

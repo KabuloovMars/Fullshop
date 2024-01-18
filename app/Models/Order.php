@@ -27,5 +27,7 @@ class Order extends Model
 
         'img',
 
+        'order_status'
+
     ];
 }
