@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Save;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -125,7 +126,7 @@ foreach($orders as $order){
 
 
     public function viewAllOrders(){
-        $orders  = Order::all();
+        $orders  = Order::paginate(5);
 
 
         return view('admin.Orders-view', compact('orders'));
@@ -137,6 +138,36 @@ foreach($orders as $order){
         Order::where('id' , $id)->update(array('order_status' => 'Accepted'));
         return redirect()->back()->with('message','Order is accepted');
 
-}
+    }
+
+    public function SaveProduct($id){
+
+        $product = Product::findOrFail($id);
+        Save::create([
+            'price'=>$product->price,
+            'quantity'=>$product->quantity,
+            'img'=>$product->img,
+            'name'=>$product->name
+        ]);
+        return redirect()->back()->with('message','Order is accepted');
+
+
+
+
+    }
+    public function ViewSave(){
+
+
+        $products = Save::all();
+
+
+
+        return view('home.save-product',compact('product'));
+    }
+
+
+
+
+
 
 }

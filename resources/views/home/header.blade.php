@@ -40,6 +40,7 @@
                             <x-app-layout>
 
                                 <li class="cart"><a href="{{ route('IndexCart') }}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                                <li class="cart"><a href="{{ route('ViewSave') }}"><i class="icon-shopping-cart"></i> Save [0]</a></li>
                             </x-app-layout>
                         </li>
                         @else

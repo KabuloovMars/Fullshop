@@ -8,8 +8,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
 
-        @include('home.css')
-	</head>
+    @include('home.css')
+
+</head>
 	<body>
 
 	<div class="colorlib-loader"></div>
@@ -34,7 +35,7 @@
 	</div>
 
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
+		<a href="#" class="js-gotop"><i class="ion-ios-arrow-up">sd</i></a>
 	</div>
 
 	<!-- jjs -->

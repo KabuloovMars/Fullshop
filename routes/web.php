@@ -71,7 +71,5 @@ Route::get('view-All-Orders', [MainController::class, 'viewAllOrders'])->name('v
 Route::get('searchOrders', [AdminController::class,'searchOrders'])->name('searchOrders');
 route::get('Accept',[AdminController::class,'accept'])->name('accept');
 Route::get('Update/{id}', [MainController::class, 'updateStatus'])->name('updateStatus');
-
-
-
-
+Route::get('Save/{id}' , [MainController::class, 'SaveProduct'])->name('SaveProduct');
+Route::get('view-save',[MainController::class,'ViewSave'])->name('ViewSave');
