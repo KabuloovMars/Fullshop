@@ -73,3 +73,4 @@ route::get('Accept',[AdminController::class,'accept'])->name('accept');
 Route::get('Update/{id}', [MainController::class, 'updateStatus'])->name('updateStatus');
 Route::get('Save/{id}' , [MainController::class, 'SaveProduct'])->name('SaveProduct');
 Route::get('view-save',[MainController::class,'ViewSave'])->name('ViewSave');
+Route::get('delete-save/{id}' , [MainController::class, 'deletesave'])->name('deletesave');

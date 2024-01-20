@@ -158,16 +158,19 @@ foreach($orders as $order){
     public function ViewSave(){
 
 
-        $products = Save::all();
-
-
-
-        return view('home.save-product',compact('product'));
+        $saves = Save::all();
+        return view('home.save-product',compact('saves'));
     }
 
 
+    public function deletesave($id){
+
+        Save::findOrfail($id)->delete();
+        return redirect()->back()->with('message' , 'Deleted save');
 
 
+
+    }
 
 
 }

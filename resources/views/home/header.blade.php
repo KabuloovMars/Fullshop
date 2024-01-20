@@ -37,10 +37,14 @@
                         @auth
 
                         <li class="cart" >
+
+                                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                            <li class="cart"><a href="{{ route('IndexCart') }}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                            <li class="cart"><a href="{{ route('ViewSave') }}"><i class="icon-shopping-cart"></i> Save[]</a></li>
+                                        {{ Auth::user()->name}}
+                                    </h2>
                             <x-app-layout>
 
-                                <li class="cart"><a href="{{ route('IndexCart') }}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
-                                <li class="cart"><a href="{{ route('ViewSave') }}"><i class="icon-shopping-cart"></i> Save [0]</a></li>
                             </x-app-layout>
                         </li>
                         @else
