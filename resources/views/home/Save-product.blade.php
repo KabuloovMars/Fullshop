@@ -59,7 +59,7 @@
                             @foreach ($saves  as $save)
 
                             <div class="card" style="width: 18rem;">
-                                <img src="storage/product-img/{{ $save->img }}" class="card-img-top" alt="...">
+                                <a href="{{ route('productDescription' ,$save->id) }}"><img src="storage/product-img/{{ $save->img }}" class="card-img-top" alt="..."></a>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $save->name }}</h5>
                                     <p class="card-text">${{ $save->price }}</p>

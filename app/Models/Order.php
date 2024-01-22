@@ -15,6 +15,8 @@ class Order extends Model
 
         'user_name',
 
+        'user_address',
+
         'user_email',
 
         'user_phone',
@@ -22,6 +24,8 @@ class Order extends Model
         'product_name',
 
         'product_price',
+
+        'total_price',
 
         'product_quantity',
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 
@@ -166,6 +167,22 @@ public function productUpdate(Request $request){
 
 
     }
+
+    public function pdf($id){
+    $products = Order::findOrfail($id);
+    $pdf = Pdf::loadView('pdf',compact('products'));
+    return $pdf->download('invoice.pdf');
+
+
+    }
+
+    public function pfd($id){
+        $products = Order::findOrfail($id);
+
+        return view('admin.pdf' ,compact('products'));
+
+
+        }
 
 
 

@@ -52,6 +52,16 @@ class MainController extends Controller
     }
 
 
+    public function productDescription($id){
+
+        $product = Save::findOrFail($id);
+
+        return view('home.product-desc',compact('product'));
+
+
+    }
+
+
     public function addToCart(Request $request ,$id){
 
         if(Auth::check()){
@@ -107,10 +117,12 @@ foreach($orders as $order){
         'user_id'=>$order->user_id,
         'product_id'=>$order->product_id,
         'user_name'=>$order->user_name,
+        'user_address'=>$order->address,
         'user_email'=>$order->email,
         'user_phone'=>$order->phone,
         'product_name'=>$order->product_name,
-        'product_price'=>$order->total_price,
+        'product_price'=>$order->price,
+        'total_price'=>$order->total_price,
         'product_quantity'=>$order->quantity,
         'img' => $order->img,
         'order_status'=>"Processing"
@@ -122,6 +134,10 @@ foreach($orders as $order){
 
         return redirect()->back()->with('massage' , 'Your order is accepted!');
 
+    }
+    public function deleteCart($id){
+        Cart::findOrfail($id)->delete();
+        return redirect()->back()->with('message' , 'successfuly delete cart');
     }
 
 

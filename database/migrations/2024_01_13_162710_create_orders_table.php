@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('product_id');
             $table->string('user_name');
             $table->string('user_email');
+            $table->string('user_address');
             $table->string('user_phone');
             $table->string('product_name');
             $table->string('product_price');
+            $table->string('total_price');
             $table->string('product_quantity');
             $table->string('img');
             $table->string('order_status');

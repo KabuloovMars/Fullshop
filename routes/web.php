@@ -65,6 +65,7 @@ Route::get('/', [MainController::class ,'indexHomeProduct']);
 
 Route::post('add-To-cart/{id}' ,[MainController::class , 'addToCart'])->name('addToCart');
 Route::get('product-desc/{id}',[MainController::class,'productDesc'])->name('productDesc');
+Route::get('product-description/{id}',[MainController::class,'productDescription'])->name('productDescription');
 Route::get('IndexCart', [MainController::class, 'IndexCart'])->name('IndexCart');
 Route::get('add-To-Order', [MainController::class, 'addToOrder'])->name('addToOrder');
 Route::get('view-All-Orders', [MainController::class, 'viewAllOrders'])->name('viewAllOrders');
@@ -73,4 +74,7 @@ route::get('Accept',[AdminController::class,'accept'])->name('accept');
 Route::get('Update/{id}', [MainController::class, 'updateStatus'])->name('updateStatus');
 Route::get('Save/{id}' , [MainController::class, 'SaveProduct'])->name('SaveProduct');
 Route::get('view-save',[MainController::class,'ViewSave'])->name('ViewSave');
+Route::get('deleteCart/{id}',[MainController::class, 'deleteCart'])->name('deleteCart');
 Route::get('delete-save/{id}' , [MainController::class, 'deletesave'])->name('deletesave');
+Route::get('pdf/{id}',[AdminController::class,'pdf'])->name('pdf');
+Route::get('pfd/{id}',[AdminController::class,'pfd'])->name('pfd');
